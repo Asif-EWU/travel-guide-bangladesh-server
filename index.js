@@ -47,6 +47,10 @@ app.use(cors());
 app.use(bodyParser.json());
 // app.use(fileUpload());
 
+app.get('/', (req, res) => {
+    res.send("Server is working...");
+})
+
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
     if(err) {
